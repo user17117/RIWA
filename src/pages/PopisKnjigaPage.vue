@@ -106,5 +106,32 @@ const rows = [
     stanje:3,
     status:'zauzeta',
   },
+    {
+    id:2,
+    naslov:'Palace of Palms: Tropical Dreams and the Making of...',
+    autor:'Kate Teltscher',
+    opis:'The body is assaulted by heat, light and the smell...',
+    slika:'',
+    stanje:1,
+    status:'slobodna',
+  },
+    {
+    id:3,
+    naslov:'If a Stranger Approaches You',
+    autor:'Laura Kasischke',
+    opis:'In “Mona,” a mother violates her daughter’s privac...',
+    slika:'',
+    stanje:2,
+    status:'slobodna',
+  },
+    {
+    id:4,
+    naslov:"Firekeeper's Daughter",
+    autor:'Angeline Boulley',
+    opis:'Eighteen-year-old Daunis Fontaine has never quite ...',
+    slika:'',
+    stanje:5,
+    status:'zauzeta',
+  },
 ]
 </script>
