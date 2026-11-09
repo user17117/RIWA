@@ -2,15 +2,16 @@
   <q-page padding>
     <!-- QBadge -->
     <div class="q-pa-md q-gutter-sm">
-      <q-btn push color="white" text-color="primary" label="Unread Mails">
+      <q-btn push color="white" text-color="primary" label="Unread Mails" @click="openMsg">
         <q-badge color="orange" v-model="readmsg" floating>{{ readmsg }}</q-badge>
       </q-btn>
-      <q-btn dense color="purple" round icon="email" class="q-ml-md">
+      <q-btn dense color="purple" round icon="email" class="q-ml-md" @click="deleteMsg">
         <q-badge color="red" v-model="delmsg" floating>{{ delmsg }}</q-badge>
       </q-btn>
     </div>
 
     <!-- QCard -->
+    <div v-for="item in msg" :key="item">
     <div class="q-pa-md row items-start q-gutter-md">
       <q-card class="my-card bg-secondary text-white">
         <q-card-section>
@@ -26,7 +27,8 @@
           <q-btn flat @click="deleteMsg()">Delete</q-btn>
         </q-card-actions>
       </q-card>
-    </div>
+    </div></div>
+
   </q-page>
 </template>
 
@@ -53,13 +55,15 @@ text: 'Lorem ipsum.'
  },
 ]
 
-
 function openMsg() {
   readmsg.value -= 1
   console.log("read " + readmsg.value)
 }
 function deleteMsg() {
   delmsg.value -= 1
+  if (delmsg.value <= 0){
+    delmsg.value = 0
+  }
   console.log("delete " + delmsg.value)
 }
 
